@@ -1,7 +1,7 @@
 # Machine-LearningIntern
 Intern Career Machine Learning Internship tasks
 
-                                    TASK 1
+# TASK 1
 
 Titanic Machine Learning Disaster - Model Development and Evaluation Documentation
 
@@ -21,7 +21,7 @@ The code reads the training and test datasets into Pandas DataFrames:
 train_data = pd.read_csv("/kaggle/input/titanic-machine-earning-disaster/train.csv")
 test_data = pd.read_csv("/kaggle/input/titanic-machine-earning-disaster/test.csv")
 
-                                    Exploratory Data Analysis
+                                  Exploratory Data Analysis
 The initial exploration includes displaying the first few rows of the training and test datasets using the `head()` method.
 
 train_data.head()
@@ -52,7 +52,7 @@ model.fit(X, y)
 predictions = model.predict(X_test)
  
 
-                                      Results Saving
+                                        Results Saving
 
 The predictions are saved to a CSV file named "Results.csv":
 
@@ -60,30 +60,30 @@ output = pd.DataFrame({'PassengerId': test_data.PassengerId, 'Survived': predict
 output.to_csv('Results.csv', index=False)
 print("Your Results file was successfully saved!")
 
-                                      Model Evaluation
+                                        Model Evaluation
 
 The code evaluates the model's performance using various metrics such as accuracy, precision, recall, F1 score, and confusion matrix:
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
-# Load the ground truth labels for the test set
+*Load the ground truth labels for the test set*
 ground_truth = pd.read_csv("/kaggle/working/Results.csv")
 y_true = ground_truth['Survived']
 
-# Evaluate the performance of the model
+*Evaluate the performance of the model*
 accuracy = accuracy_score(y_true, predictions)
 precision = precision_score(y_true, predictions)
 recall = recall_score(y_true, predictions)
 f1 = f1_score(y_true, predictions)
 conf_matrix = confusion_matrix(y_true, predictions)
 
-# Display the evaluation metrics
+*Display the evaluation metrics*
 print(f"Accuracy: {accuracy:.4f}")
 print(f"Precision: {precision:.4f}")
 print(f"Recall: {recall:.4f}")
 print(f"F1 Score: {f1:.4f}")
 
-# Display the confusion matrix
+*Display the confusion matrix*
 print("Confusion Matrix:")
 print(conf_matrix)
  
