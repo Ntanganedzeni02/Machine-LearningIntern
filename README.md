@@ -66,24 +66,28 @@ The code evaluates the model's performance using various metrics such as accurac
 
 from sklearn.metrics import accuracy_score, precision_score, recall_score, f1_score, confusion_matrix
 
-*Load the ground truth labels for the test set*
+*Load the ground truth labels for the test set* :
+
 ground_truth = pd.read_csv("/kaggle/working/Results.csv")
 y_true = ground_truth['Survived']
 
-*Evaluate the performance of the model*
+*Evaluate the performance of the model* :
+
 accuracy = accuracy_score(y_true, predictions)
 precision = precision_score(y_true, predictions)
 recall = recall_score(y_true, predictions)
 f1 = f1_score(y_true, predictions)
 conf_matrix = confusion_matrix(y_true, predictions)
 
-*Display the evaluation metrics*
+*Display the evaluation metrics* :
+
 print(f"Accuracy: {accuracy:.4f}")
 print(f"Precision: {precision:.4f}")
 print(f"Recall: {recall:.4f}")
 print(f"F1 Score: {f1:.4f}")
 
-*Display the confusion matrix*
+*Display the confusion matrix*:
+
 print("Confusion Matrix:")
 print(conf_matrix)
  
